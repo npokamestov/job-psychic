@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/foundation.css">
     <link rel="stylesheet" href="./assets/css/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Job Psychic: We show you your future Job</title>
     <link rel="icon" href="./assets/images/titleLogo.png" type = "image/x-icon">
 </head>
@@ -44,36 +45,94 @@
         </div>
 
         <div class="hero-form">
-            <h3>Get Started Today!</h3>
-            <p> Fill out this form and one of our trainers will schedule a consult</p>
+            <h3>Which Job Does Your Future Hold?</h3>
+            <p> Begin searching with as little as a job title</p>
             <form>
-                <label for="name">Enter full name:</label>
-                <input type="text" placeholder="Your Name" name="name" id="name" class="form-input"/>
+              <div class="row columns">
+                <label for="name">Job Title:</label>
+                <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input"/>
+              </div>
 
-                <label for="email">Enter email address:</label>
-                <input type="email" placeholder="Email Address" name="email" id="email" class="form-input" />
+              <div id="location-selection" class="row">
+                <div id="city-input" class="columns small-12 medium-4">
+                  <label for="city">City:</label>
+                  <input type="text" placeholder="City" name="city" id="city" class="form-input" />
+                </div>
+                <!--dropdown menu-->
+                <div id="state-div" class="form-group columns small-3">
+                  <label for="state">State:</label>
+                  <select id="state-selector" name="state" class="select-dropdown">
+                      <option value="" disabled selected>Choose a State</option>
+                      <option value="Alabama">AL</option>
+                      <option value="Alaska">AK</option>
+                      <option value="Arizona">AZ</option>
+                      <option value="Arkansas">AR</option>
+                      <option value="California">CA</option>
+                      <option value="Colorado">CO</option>
+                      <option value="Connecticut">CT</option>
+                      <option value="Delaware">DE</option>
+                      <option value="Florida">FL</option>
+                      <option value="Georgia">GA</option>
+                      <option value="Hawaii">HI</option>
+                      <option value="Idaho">ID</option>
+                      <option value="Illinois">IL</option>
+                      <option value="Indiana">IN</option>
+                      <option value="Iowa">IA</option>
+                      <option value="Kansas">KS</option>
+                      <option value="Kentucky">KY</option>
+                      <option value="Louisiana">LA</option>
+                      <option value="Maine">ME</option>
+                      <option value="Maryland">MD</option>
+                      <option value="Massachusetts">MA</option>
+                      <option value="Michigan">MI</option>
+                      <option value="Minnesota">MN</option>
+                      <option value="Mississippi">MS</option>
+                      <option value="Missouri">MO</option>
+                      <option value="Montana">MT</option>
+                      <option value="Nebraska">NE</option>
+                      <option value="Nevada">NV</option>
+                      <option value="New Hampshire">NH</option>
+                      <option value="New Jersey">NJ</option>
+                      <option value="New Mexico">NM</option>
+                      <option value="New York">NY</option>
+                      <option value="North Carolina">NC</option>
+                      <option value="North Dakota">ND</option>
+                      <option value="Ohio">OH</option>
+                      <option value="Oklahoma">OK</option>
+                      <option value="Oregon">OR</option>
+                      <option value="Pennsylvania">PA</option>
+                      <option value="Rhode Island">RI</option>
+                      <option value="South Carolina">SC</option>
+                      <option value="South Dakota">SD</option>
+                      <option value="Tennessee">TN</option>
+                      <option value="Texas">TX</option>
+                      <option value="Utah">UT</option>
+                      <option value="Vermont">VT</option>
+                      <option value="Virginia">VA</option>
+                      <option value="Washington">WA</option>
+                      <option value="West Virginia">WV</option>
+                      <option value="Wyoming">WY</option>
+                  </select>
+                </div>
+              </div>
 
-                <p>
-                    Have you worked out with a trainer before?
-                    <span class="radio-wrapper">
-                      <input type="radio" name="trainer-confirm" id="trainer-yes">
-                      <label for="trainer-yes">Yes</label>
-                    </span>
-                    <span class="radio-wrapper">
-                      <input type="radio" name="trainer-confirm" id="trainer-no">
-                      <label for="trainer-no">No</label>
-                    </span>
-                </p>
-                <p>
-                    <span class="checkbox-wrapper">
-                      <label for="checkbox">I acknowledge that I am at least 18 years of age.</label>
-                      <input type="checkbox" name="age-confirm" id="checkbox"/>
-                    </span>
-
-                </p>
-                <button type="submit">
-                    Get running!
-                </button>
+              <div class="row columns">
+                <label for="country">Country:</label>
+                <input type="text" placeholder="Default: USA" name="country" id="country" class="form-input" />
+              </div>
+              <div class="row">
+                <div class="columns small">
+                  <label for="Radius">Radius:</label>
+                  <input type="number" min="5" placeholder="5 Miles or more" name="radius" id="radius" class="form-input" />
+                </div>
+              </div>
+                <div class="row" id="search-landing">
+                  <div class="columns small-1">
+                    <button id="search-btn-landing" type="submit">
+                        Show Me My Future!
+                    </button>
+                </div>
+              </div>
             </form>
         </div>
     </section>

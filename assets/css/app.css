@@ -53,9 +53,9 @@ margin: 5px 0 15px 0;
 .hero-form button:hover {
     background-color: #39a6b2;  
 }
-}
+
 .hero{
-    background-image: url("../images/hero-bg.jpg");
+    background-image: url("../images/hero-bg.png");
     background-size: cover;
     background-position: center;
     /*This is to add flex on the .hero element*/
@@ -81,7 +81,7 @@ margin: 5px 0 15px 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .hero-form{
-    background-color: var(--primary-color);
+    background-color: white;
     padding: 20px;
     color: var(--secondary-color);
     border-style: solid;
@@ -91,5 +91,5 @@ margin: 5px 0 15px 0;
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
     border-radius: 15px;
-    opacity: 80%;
+    opacity: 70%;
 }

@@ -1,0 +1,9 @@
+#location-selection {
+    justify-content: space-between;
+}
+#state-selector {
+    border-radius: 10px;
+}
+#search-landing {
+    justify-content: flex-end;
+}
