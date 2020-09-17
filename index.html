@@ -116,9 +116,12 @@
                 </div>
               </div>
 
-              <div class="row columns">
-                <label for="country">Country:</label>
-                <input type="text" placeholder="Default: USA" name="country" id="country" class="form-input" />
+              <div id="country" class="form-group columns small-3">
+                <label for="state">State:</label>
+                <select id="country-selector" name="country" class="select-dropdown">
+                    <option value="" disabled selected>Country</option>
+                    <option value="unitedStates">United States</option>
+                </select>
               </div>
               <div class="row">
                 <div class="columns small">
