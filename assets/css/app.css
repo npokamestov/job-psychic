@@ -1,3 +1,7 @@
+h1{
+    text-align: center;
+}
+
 .footer-nav {
     align-items: center;
     background-color: #8C52FF;
@@ -92,4 +96,18 @@ margin: 5px 0 15px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
     border-radius: 15px;
     opacity: 70%;
+}
+@media only screen and (max-width: 800px){
+    .hero-form{
+        width: fit-content;
+    }
+
+    .hero-cta {
+        width: 100%;
+        text-align: center;
+        margin: 3.5%;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.2;
+    }
 }
