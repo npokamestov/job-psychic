@@ -1,3 +1,7 @@
+var apiKeyZip = 
+var apiKeyIndeed = 
+
+
 var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
 var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [];
 
@@ -39,11 +43,12 @@ function searchJobHandler (event) {
         // console.log(formInputArr)
         localStorage.setItem("formInputObj", JSON.stringify(formInputArr));
     };
-        getJobsMonster(formObj);
+        getJobsZip(formObj);
         getJobsIndeed(formObj);
-        getjobsGlass(formObj);
 };
 
+function getJobsMonster (formObj) {
 
+};
 
 searchBtnLandingEl.addEventListener("click", searchJobHandler);
