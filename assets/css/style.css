@@ -7,3 +7,6 @@
 #search-landing {
     justify-content: flex-end;
 }
+.capitalize {
+    text-transform: capitalize;
+}
