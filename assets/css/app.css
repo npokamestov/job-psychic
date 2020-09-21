@@ -59,7 +59,7 @@ margin: 5px 0 15px 0;
 }
 
 .hero{
-    background-image: url("../images/hero-bg.png");
+    background-image: url("../images/background.jpg");
     background-size: cover;
     background-position: center;
 
@@ -138,7 +138,7 @@ margin: 5px 0 15px 0;
 .testimony{
     margin: 20px;
     background: var(--secondary-color);
-    color: var(--primary-color);
+    color: white;
     flex: 1;
 }
 .user-img {
@@ -151,24 +151,24 @@ margin: 5px 0 15px 0;
     position: relative;
     overflow: hidden;
 }
-.hero-1{
+.user-1{
     background-image: url(../images/hero1.jpg);
 }
-.hero-2{
-    background-image: url(../images/hero2.jpeg);
+.user-2{
+    background-image: url(../images/user2.jpg);
 }
-.hero-3{
-    background-image: url(../images/hero2.jpeg);
+.user-3{
+    background-image: url(../images/user3.png);
 }
-.hero-4{
-    background-image: url(../images/hero2.jpeg);
+.user-4{
+    background-image: url(../images/user4.png);
 }
 
 .user-img::after {
     content: "";
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba(252, 225, 56, 0.3), rgba(2, 78, 118, 1));
+    background: linear-gradient(rgba(140,82,255, 0.3), rgba(2, 78, 118, 1));
     position: absolute;
     top: 0;
     left: 0;
@@ -178,13 +178,7 @@ margin: 5px 0 15px 0;
 
 .testimony:hover .user-img::after {
     opacity: 1;
-    background: linear-gradient( rgba(252, 225, 56, 0.3), #024e76);
-}
-
-.testimony:hover .user-img h3, .testimony:hover .user-img h4 {
-    opacity: 0;
-    transition: 0.5s;
-
+    background: linear-gradient( rgba(140,82,255, 0.3), #024e76);
 }
 
 .user-img h3 {
