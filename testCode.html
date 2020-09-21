@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Psychic: We show you your future Job</title>
+    <link rel="icon" href="./assets/images/titleLogo.png" type = "image/x-icon">
+</head>
+
+
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial;
+      font-size: 17px;
+    }
+    
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 5%; 
+      min-height: 5%;
+    }
+    
+    .content {
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+    }
+
+
+ 
+.hero-form h3{
+margin: 0px;
+font-size: 24px;
+}
+.hero-form p{
+margin: 5px 0 15px 0;
+}
+.form-input{
+    border: 1px solid var(--secondary-color);
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+}
+
+/* create a new rule for focus state */
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+}
+
+.hero-form label{
+    margin: 0 5px;
+}
+.hero-form button{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.hero-form button:hover {
+    background-color: #39a6b2;  
+}
+.hero-form{
+    background-color: white;
+    padding: 20px;
+    color: var(--secondary-color);
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--secondary-color);/*This could be the alternative you can put so you dont write border-style, border-width, and border-color:border: solid 3px #024e76*/
+    width: 40%;
+    margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
+    border-radius: 15px;
+    opacity: 70%;
+}
+.hero-cta{
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+}
+.hero-cta h2{
+    font-style: italic;
+    font-size: 55px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+   
+
+
+    </style>
+    </head>
+    <body>
+
+    <main>
+    
+    <video autoplay muted loop id="myVideo">
+      <source src="200314_Work_Life_02_4k_58.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div class="hero-cta">
+        <div class="flex-row">
+            <h2>We see your future...</h2>
+        </div>
+        
+            <p>
+                seitan heirloom post-ironic pop-up iPhone mlkshk hella selfies fashion axe occupy readymade put a bird on it
+                messenger bag Wes Anderson Schlitz plaid Bushwick church-key lo-fi skateboard slow-carb hashtag trust fund
+                Williamsburg biodiesel fixie farm-to-table 8-bit banjo XOXO Banksy chillwave bicycle rights retro cliche
+                tattooed bespoke irony mumblecore Shoreditch deep v polaroid McSweeney's bitters cray gentrify tofu Marfa you
+                probably haven't heard of them yr banh mi asymmetrical art party selvage letterpress High Life.
+            </p>
+    </div>
+
+    <div class="hero-form">
+        <h3>Which Job Does Your Future Hold?</h3>
+        <p> Begin searching with as little as a job title</p>
+        <form>
+          <div class="row columns">
+            <label for="title">Job Title:</label>
+            <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input"></input>
+          </div>
+
+          <div id="location-selection" class="row">
+            <div id="city-input" class="columns small-12 medium-4">
+              <label for="city">City:</label>
+              <input type="text" placeholder="City" name="city" id="city" class="form-input" />
+            </div>
+            <!--dropdown menu-->
+            <div id="state-div" class="form-group columns small-3">
+              <label for="state">State:</label>
+              <select id="state-selector" name="state" class="select-dropdown">
+                  <option value="" disabled selected>Choose a State</option>
+                  <option value="Alabama">AL</option>
+                  <option value="Alaska">AK</option>
+                  <option value="Arizona">AZ</option>
+                  <option value="Arkansas">AR</option>
+                  <option value="California">CA</option>
+                  <option value="Colorado">CO</option>
+                  <option value="Connecticut">CT</option>
+                  <option value="Delaware">DE</option>
+                  <option value="Florida">FL</option>
+                  <option value="Georgia">GA</option>
+                  <option value="Hawaii">HI</option>
+                  <option value="Idaho">ID</option>
+                  <option value="Illinois">IL</option>
+                  <option value="Indiana">IN</option>
+                  <option value="Iowa">IA</option>
+                  <option value="Kansas">KS</option>
+                  <option value="Kentucky">KY</option>
+                  <option value="Louisiana">LA</option>
+                  <option value="Maine">ME</option>
+                  <option value="Maryland">MD</option>
+                  <option value="Massachusetts">MA</option>
+                  <option value="Michigan">MI</option>
+                  <option value="Minnesota">MN</option>
+                  <option value="Mississippi">MS</option>
+                  <option value="Missouri">MO</option>
+                  <option value="Montana">MT</option>
+                  <option value="Nebraska">NE</option>
+                  <option value="Nevada">NV</option>
+                  <option value="New Hampshire">NH</option>
+                  <option value="New Jersey">NJ</option>
+                  <option value="New Mexico">NM</option>
+                  <option value="New York">NY</option>
+                  <option value="North Carolina">NC</option>
+                  <option value="North Dakota">ND</option>
+                  <option value="Ohio">OH</option>
+                  <option value="Oklahoma">OK</option>
+                  <option value="Oregon">OR</option>
+                  <option value="Pennsylvania">PA</option>
+                  <option value="Rhode Island">RI</option>
+                  <option value="South Carolina">SC</option>
+                  <option value="South Dakota">SD</option>
+                  <option value="Tennessee">TN</option>
+                  <option value="Texas">TX</option>
+                  <option value="Utah">UT</option>
+                  <option value="Vermont">VT</option>
+                  <option value="Virginia">VA</option>
+                  <option value="Washington">WA</option>
+                  <option value="West Virginia">WV</option>
+                  <option value="Wyoming">WY</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="columns small">
+              <label for="Radius">Radius:</label>
+              <input type="number" min="5" placeholder="5 Miles or more" name="radius" id="radius" class="form-input" />
+            </div>
+          </div>
+            <div class="row" id="search-landing">
+              <div class="columns small-1">
+                <button id="search-btn-landing" type="submit">
+                    Show Me My Future!
+                </button>
+            </div>
+          </div>
+        </form>
+    </div>
+</main>
+    
+    </body>
+    </html>
+    
