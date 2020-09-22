@@ -1,11 +1,15 @@
-var apiKeyJooble = "59249837-731a-40d4-8f77-87656a08d596"
+var apiKeyJooble = "c9c7ab80-0666-402d-812c-887be7ca69a5"
 var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
 var appIdAdzuna = "16a1e151"
 
 var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
-// console.log(formInputArr)
+console.log(formInputArr)
 var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [];
-console.log(searchHistoryArr)
+// console.log(searchHistoryArr)
+var joobleJobsArr = JSON.parse(localStorage.getItem("joobleJobsObj")) || [];
+console.log(joobleJobsArr)
+var adzunaJobsArr = JSON.parse(localStorage.getItem("adzunaJobsObj")) || [];
+console.log(adzunaJobsArr)
 
 var copyrightYearEl = document.querySelector(".footer-copyright");
 var copyrightYearText = document.querySelector("#copyright-year")
@@ -15,14 +19,50 @@ var radiusEl = document.querySelector("#radius");
 var searchBtnLandingEl = document.querySelector("#search-btn-landing");
 
 var listingContainerEl = document.querySelector("#listing-container");
-var joblistHeaderEl = document.querySelector("#joblist-header")
+var joblistHeaderEl = document.querySelector("#joblist-header");
 var listingsListEl = document.querySelector("#listings");
-
 
 function displayCopyrightYear() {
     $(copyrightYearText).text(new Date().getFullYear())
     // console.log(copyrightYearText)
-}
+    
+};
+
+function displayOnLoad(event) {
+    event.preventDefault();
+    $(listingsListEl).empty();
+    var jobTitle = formInputArr.titleForm
+    var city = formInputArr.cityForm
+    var radius = formInputArr.radiusForm
+    var formObj = {
+        titleForm: jobTitle,
+        cityForm: city,
+        radiusForm: radius
+    };
+    displayJobsHeader(formObj);
+    for (var i=0;i<joobleJobsArr.length;i++) {
+        var joobleTitle = joobleJobsArr[i].title;
+        var joobleLocation = joobleJobsArr[i].location;
+        var joobleLink = joobleJobsArr[i].link
+        var joobleJobsObj = {
+            title: joobleTitle,
+            location: joobleLocation,
+            link: joobleLink
+        };
+        displayJobsJooble(joobleJobsObj);
+    };
+    for (var i=0;i<adzunaJobsArr.length;i++) {
+        var adzunaTitle = adzunaJobsArr[i].title;
+        var adzunaLoaction = adzunaJobsArr[i].location;
+        var adzunaLink = adzunaJobsArr[i].link
+        var adzunaJobsObj = {
+            title: adzunaTitle,
+            location: adzunaLoaction,
+            link: adzunaLink
+        };
+        displayJobsAdzuna(adzunaJobsObj);
+    };
+};
 
 function searchJobHandler (event) {
     event.preventDefault();
@@ -59,7 +99,7 @@ function searchJobHandler (event) {
         formInputArr.push(formObj);
         // console.log(formInputArr)
         localStorage.setItem("formInputObj", JSON.stringify(formInputArr));
-    };
+    }
 
         $(listingsListEl).empty();
         getJobsJooble(formObj);
@@ -101,7 +141,7 @@ function getJobsAdzuna (formObj) {
     .then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                // console.log(response)
+                console.log(response)
                 // console.log(data)
                 collectJobsAdzuna(formObj, data)
             });
@@ -113,6 +153,8 @@ function getJobsAdzuna (formObj) {
 };
 
 function collectJobsJooble(formObj, jobs) {
+    localStorage.removeItem("joobleJobsObj")
+    joobleJobsArr.length = 0;
     for (var i = 0; i < jobs.length; i++) {
         var jobTitle = jobs[i].title
         // console.log(jobTitle)
@@ -120,18 +162,24 @@ function collectJobsJooble(formObj, jobs) {
         // console.log(jobLocation)
         var jobUrl = jobs[i].link
         // console.log(jobUrl)
-        var joobleJobs = {
+        var joobleJobsObj = {
             title: jobTitle,
             location: jobLocation,
             link: jobUrl
         };
-        displayJobsJooble(joobleJobs)
+        // // console.log(formObj.titleForm)
+        joobleJobsArr.push(joobleJobsObj);
+        // console.log(formInputArr)
+        localStorage.setItem("joobleJobsObj", JSON.stringify(joobleJobsArr));
+        displayJobsJooble(joobleJobsObj)
         // console.log(joobleJobs)
     };
     displayJobsHeader(formObj)
 };
 
 function collectJobsAdzuna(formObj, data) {
+    localStorage.removeItem("adzunaJobsObj")
+    adzunaJobsArr.length = 0;
     var jobResults = data.results
     // console.log(jobResults)
     for (var i = 0; i < jobResults.length; i++) {
@@ -153,13 +201,16 @@ function collectJobsAdzuna(formObj, data) {
         var jobURL = jobResults[i].redirect_url;
         // console.log(jobURL)
         // console.log(locationName)
-        var adzunaJobs = {
+        var adzunaJobsObj = {
             title: jobTitle,
             location: locationName,
             link: jobURL
         };
-        displayJobsAdzuna(adzunaJobs);
+        adzunaJobsArr.push(adzunaJobsObj);
+        localStorage.setItem("adzunaJobsObj", JSON.stringify(adzunaJobsArr));
+        displayJobsAdzuna(adzunaJobsObj)
         // console.log(adzunaJobs);
+        window.location.href="listings.html"
     }
 };
 
@@ -172,14 +223,14 @@ function displayJobsHeader(formObj) {
         $(listingContainerEl).prepend(jobsListHeader);
 };
 
-function displayJobsJooble(joobleJobs) {
+function displayJobsJooble(joobleJobsObj) {
     var joobleListingItem = $("<li>");
         joobleListingItem.addClass("listing-item")
-    var joobleListingItemText= joobleJobs.title;
-    var joobleListingLocation = joobleJobs.location;
+    var joobleListingItemText= joobleJobsObj.title;
+    var joobleListingLocation = joobleJobsObj.location;
 
     var joobleListingLink = $("<a>");
-        joobleListingLink.attr("href", joobleJobs.link);
+        joobleListingLink.attr("href", joobleJobsObj.link);
         joobleListingLink.attr("target", "_blank");
         joobleListingLink.text(joobleListingItemText + " - " + joobleListingLocation);
 
@@ -190,14 +241,14 @@ function displayJobsJooble(joobleJobs) {
         // console.log(historyLinks)
 };
 
-function displayJobsAdzuna(adzunaJobs) {
+function displayJobsAdzuna(adzunaJobsObj) {
     var adzunaListingItem = $("<li>");
         adzunaListingItem.addClass("listing-item")
-    var adzunaListingItemText = adzunaJobs.title;
-    var adzunaListingLocation = adzunaJobs.location;
+    var adzunaListingItemText = adzunaJobsObj.title;
+    var adzunaListingLocation = adzunaJobsObj.location;
 
     var adzunaListingLink = $("<a>");
-        adzunaListingLink.attr("href", adzunaJobs.link);
+        adzunaListingLink.attr("href", adzunaJobsObj.link);
         adzunaListingLink.attr("target", "_blank");
         adzunaListingLink.text(adzunaListingItemText + " - " + adzunaListingLocation);
 
@@ -223,3 +274,4 @@ $(listingsListEl).on("click", "a", function(event) {
 
 searchBtnLandingEl.addEventListener("click", searchJobHandler);
 displayCopyrightYear();
+window.addEventListener("load", displayOnLoad)
