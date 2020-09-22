@@ -237,8 +237,8 @@ function displayJobsJooble(joobleJobsObj) {
         $(listingsListEl).append(joobleListingItem);
         $(joobleListingItem).append(joobleListingLink);
         // console.log(joobleListingItem)
-    var historyLinks = document.querySelector(".listing-item");
-        // console.log(historyLinks)
+    // var historyLinks = document.querySelector(".listing-item");
+    //     console.log(historyLinks)
 };
 
 function displayJobsAdzuna(adzunaJobsObj) {
@@ -269,8 +269,6 @@ $(listingsListEl).on("click", "a", function(event) {
     searchHistoryArr.push(listingsObj);
     localStorage.setItem("searchHistoryObj", JSON.stringify(searchHistoryArr));
 });
-
-
 
 searchBtnLandingEl.addEventListener("click", searchJobHandler);
 displayCopyrightYear();
