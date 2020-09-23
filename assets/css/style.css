@@ -1,9 +1,30 @@
 #location-selection {
     justify-content: space-between;
+    flex-direction: row;
 }
 #state-selector {
     border-radius: 10px;
 }
 #search-landing {
     justify-content: flex-end;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
