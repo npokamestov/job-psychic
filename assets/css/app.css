@@ -1,9 +1,14 @@
-.footer-nav {
-    align-items: center;
-    background-color: #8C52FF;
-    padding: 2rem;
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+:root{
+    --primary-color:#8C52FF;
+    --secondary-color: #024e76;
+
+}
+
 .row.expanded {
     max-width: none;
 }
@@ -30,7 +35,6 @@ margin: 5px 0 15px 0;
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
-    background-color: rgba(255,255,255, 0.75);
 }
 
 /* create a new rule for focus state */
@@ -43,7 +47,7 @@ margin: 5px 0 15px 0;
     margin: 0 5px;
 }
 .hero-form button{
-    color: var(--primary-color);
+    color: white;
     background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
@@ -55,10 +59,11 @@ margin: 5px 0 15px 0;
 }
 
 .hero{
-    background-image: url("../images/hero-bg.png");
+    background-image: url("../images/background.jpg");
     background-size: cover;
     background-position: center;
-    /*This is to add flex on the .hero element*/
+
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -77,13 +82,13 @@ margin: 5px 0 15px 0;
 .hero-cta h2{
     font-style: italic;
     font-size: 55px;
-    color: var(--primary-color);
+    color: var(white);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .hero-form{
-    background-color: white;
+    background-color: var(--primary-color);
     padding: 20px;
-    color: var(--secondary-color);
+    color: white;
     border-style: solid;
     border-width: 3px;
     border-color: var(--secondary-color);/*This could be the alternative you can put so you dont write border-style, border-width, and border-color:border: solid 3px #024e76*/
@@ -92,4 +97,167 @@ margin: 5px 0 15px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
     border-radius: 15px;
     opacity: 70%;
+}
+
+.section-title {
+    font-size: 48px;
+    border-bottom: 3px solid;
+    color: white;
+    /*This is to add flex*/
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
+  }
+.primary-border{
+    border-color: var(--secondary-color);
+}
+
+.testimonies{
+    background-color: var(--primary-color);
+}
+
+.intro p{
+    line-height: 1.7;
+    color: #39a6b2;
+    width: 80%;
+    font-size: 20px;
+    /*you can use either display: inline-block to center the 
+    text back or you can use:*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trainers{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+}
+.testimony{
+    margin: 20px;
+    background: var(--secondary-color);
+    color: white;
+    flex: 1;
+}
+.user-img {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.user-1{
+    background-image: url(../images/hero1.jpg);
+}
+.user-2{
+    background-image: url(../images/user2.jpg);
+}
+.user-3{
+    background-image: url(../images/user3.png);
+}
+.user-4{
+    background-image: url(../images/user4.png);
+}
+
+.user-img::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(140,82,255, 0.3), rgba(2, 78, 118, 1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+.testimony:hover .user-img::after {
+    opacity: 1;
+    background: linear-gradient( rgba(140,82,255, 0.3), #024e76);
+}
+
+.user-img h3 {
+    font-size: 28px;
+    position: relative;
+    z-index: 20;
+    margin-bottom: 5px;
+    top: 200px;
+    transition: 0.6s;
+}
+
+.user-img h4 {
+    font-size: 22px;
+    position: relative;
+    z-index: 20;
+    top: 200px;
+    transition: 0.6s;
+}
+
+
+.testimony:hover .user-img h3,
+.testimony:hover .user-img h4 {
+    top: 0;
+}
+.testimony-bio{
+    padding: 35px;
+    float: left;
+    line-height: 1.3;
+}
+
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.flex-row{
+    display: flex;
+    
+}
+.testimony-bio h3{
+    font-size: 28px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+
+}
+.testimony-bio h4{
+    font-weight: lighter;
+    font-size: 22px;
+    margin-bottom: 15px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+.testimony-bio p{
+    font-size: 17px;
+}
+q{
+    font-style: italic;
+    font-size: larger;
+}
+.footer-nav {
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    width: 100%;
+}
+@media only screen and (max-width: 800px){
+    .hero-form{
+        width: fit-content;
+    }
+
+    .hero-cta {
+        width: 100%;
+        text-align: center;
+        margin: 3.5%;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.2;
+    }
 }
