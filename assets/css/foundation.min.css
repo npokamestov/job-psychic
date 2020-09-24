@@ -6080,12 +6080,13 @@ select:not([multiple]) {
         -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-        max-width: 100%
+        max-width: 100%;
     }
 
     .stack-for-small .media-object-section img {
-        width: 100%
+        width: auto;
     }
+
 }
 
 .media-object-section.main-section {

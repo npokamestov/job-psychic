@@ -8,6 +8,12 @@
     --secondary-color: #024e76;
 
 }
+.top-bar-title{
+    font-size: xx-large;
+}
+.top-bar-right{
+    font-size: larger;
+}
 
 .row.expanded {
     max-width: none;
@@ -111,6 +117,23 @@ margin: 5px 0 15px 0;
   }
 .primary-border{
     border-color: var(--secondary-color);
+}
+
+.card-section{
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+.card-section h2{
+    color: white;
+}
+.card-section h3{
+    color: white;
+}
+.card-section p{
+    color: white;
+}
+.comment{
+    font-size: large;
 }
 
 .testimonies{
@@ -247,6 +270,38 @@ q{
     padding: 2rem;
     width: 100%;
 }
+
+#location-selection {
+    justify-content: space-between;
+    flex-direction: row;
+}
+#state-selector {
+    border-radius: 10px;
+}
+#search-landing {
+    justify-content: flex-end;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 800px){
     .hero-form{
         width: fit-content;
