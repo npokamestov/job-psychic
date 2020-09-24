@@ -8,6 +8,10 @@
     --secondary-color: #024e76;
 
 }
+.topbar-responsive-logo img{
+    width: 100px;
+    height: 100px;
+}
 .top-bar-title{
     font-size: xx-large;
 }
