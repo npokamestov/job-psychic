@@ -28,3 +28,10 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+.red-text {
+    color: white;
+    background-color: crimson;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 4px;
+}

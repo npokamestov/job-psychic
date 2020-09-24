@@ -62,8 +62,6 @@ margin: 5px 0 15px 0;
     background-image: url("../images/background.jpg");
     background-size: cover;
     background-position: center;
-
-
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

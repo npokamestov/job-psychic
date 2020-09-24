@@ -12,7 +12,9 @@ var adzunaJobsArr = JSON.parse(localStorage.getItem("adzunaJobsObj")) || [];
 console.log(adzunaJobsArr)
 
 var copyrightYearEl = document.querySelector(".footer-copyright");
-var copyrightYearText = document.querySelector("#copyright-year")
+var copyrightYearText = document.querySelector("#copyright-year");
+
+var errorMessageEl = document.querySelector("#error-message");
 var jobTitleEl = document.querySelector("#job-title");
 var cityEl = document.querySelector("#city");
 var radiusEl = document.querySelector("#radius");
@@ -23,9 +25,8 @@ var joblistHeaderEl = document.querySelector("#joblist-header");
 var listingsListEl = document.querySelector("#listings");
 
 function displayCopyrightYear() {
-    $(copyrightYearText).text(new Date().getFullYear())
+    $(copyrightYearText).text(new Date().getFullYear());
     // console.log(copyrightYearText)
-    
 };
 
 function displayOnLoad(event) {
@@ -130,6 +131,10 @@ function getJobsJooble (formObj) {
             // console.log(jobs);
             collectJobsJooble(formObj, jobs);
         }
+        else {
+            $(errorMessageEl).addClass("red-text")
+            $(errorMessageEl).text("Job Title/City Not Found")
+        }
     }
     //Send request to server
     http.send(params);
@@ -147,7 +152,8 @@ function getJobsAdzuna (formObj) {
             });
         }
         else {
-            console.log("Error: Input " + response.statusText)
+            $(errorMessageEl).addClass("red-text")
+            $(errorMessageEl).text("Job Title/City Not Found")
         }
     })
 };
