@@ -949,7 +949,7 @@ button,input,optgroup,select,textarea {
 }
 
 .grid-margin-x.small-up-2>.cell {
-    width: calc(50% - 1.25rem)
+    width: fit-content;
 }
 
 .grid-margin-x.small-up-3>.cell {
@@ -6079,12 +6079,13 @@ select:not([multiple]) {
         -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-        max-width: 100%
+        max-width: 100%;
     }
 
     .stack-for-small .media-object-section img {
-        width: 100%
+        width: auto;
     }
+
 }
 
 .media-object-section.main-section {
