@@ -3,7 +3,7 @@ var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
 var appIdAdzuna = "16a1e151"
 
 var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
-console.log(formInputArr)
+// console.log(formInputArr)
 var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [];
 // console.log(searchHistoryArr)
 var joobleJobsArr = JSON.parse(localStorage.getItem("joobleJobsObj")) || [];
