@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#8C52FF;
+    --secondary-color: #024e76;
+
+}
+.top-bar-title{
+    font-size: xx-large;
+}
+.top-bar-right{
+    font-size: larger;
+}
+
+.row.expanded {
+    max-width: none;
+}
+.row {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.hero-form h3{
+    margin: 0px;
+    font-size: 24px;
+}
+.hero-form p{
+margin: 5px 0 15px 0;
+}
+.form-input{
+    border: 1px solid var(--secondary-color);
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* create a new rule for focus state */
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+}
+
+.hero-form label{
+    margin: 0 5px;
+}
+.hero-form button{
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.hero-form button:hover {
+    background-color: #39a6b2;  
+}
+
+.hero{
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
+}
+.hero-cta{
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+}
+.hero-cta h2{
+    font-style: italic;
+    font-size: 55px;
+    color: var(white);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.hero-form{
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--secondary-color);/*This could be the alternative you can put so you dont write border-style, border-width, and border-color:border: solid 3px #024e76*/
+    width: 40%;
+    margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
+    border-radius: 15px;
+    opacity: 85%;
+}
+
+.section-title {
+    font-size: 48px;
+    border-bottom: 3px solid;
+    color: white;
+    /*This is to add flex*/
+    padding-bottom: 20px;
+    text-align: center;
+    margin: 0 auto 35px auto;
+    width: 50%;
+}
+.primary-border{
+    border-color: var(--secondary-color);
+}
+
+.card{
+    border-radius: 10px;
+}
+
+.card-section{
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+.card-section h2{
+    color: white;
+}
+.card-section h3{
+    color: white;
+}
+.card-section p{
+    color: white;
+    font-size: large;
+}
+
+
+.testimonies{
+    background-color: var(--primary-color);
+    
+}
+
+.flex-row h2{
+    font-size: 50px;
+
+}
+
+.intro p{
+    line-height: 1.7;
+    color: #39a6b2;
+    width: 80%;
+    font-size: 25px;
+    /*you can use either display: inline-block to center the 
+    text back or you can use:*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+q{
+    font-style: italic;
+    font-size: larger;
+}
+.footer-nav {
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    width: 100%;
+}
+
+#location-selection {
+    justify-content: space-between;
+    flex-direction: row;
+}
+#state-selector {
+    border-radius: 10px;
+}
+#search-landing {
+    justify-content: flex-end;
+}
+
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 800px){
+    .hero-form{
+        width: fit-content;
+    }
+    .top-bar-title{
+        text-align: center;
+    }
+
+    .hero-cta {
+        width: 100%;
+        text-align: center;
+        margin: 3.5%;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+}
+
+@media only screen and (max-width: 640px){
+
+    .flex-row h2{
+        width: fit-content;
+    }
+}

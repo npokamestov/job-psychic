@@ -1,0 +1,56 @@
+:root{
+    --primary-color:#8C52FF;
+    --secondary-color: #024e76;
+
+}
+.hero-form-listings {
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--secondary-color);
+    margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    opacity: 85%;
+}
+.hero-form-listings h3{
+    text-align: center;
+}
+.hero-form-listings label{
+    font-size: larger;
+}
+.hero-form-listings button {
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.hero-form-listings button:hover {
+    background-color: #39a6b2;  
+}
+
+.capitalize{
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+.listing-item{
+    font-size: larger;
+    text-align: center;
+    list-style: none;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+a:link {
+    text-decoration: none;
+    color: black;
+}
+a:link:hover{
+    color: var(--primary-color);
+}

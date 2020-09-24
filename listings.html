@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/foundation.css">
+    <link rel="stylesheet" href="./assets/css/foundation.min.css">
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/titleLogo.png" type = "image/x-icon">
+    <title>Job Psychic: Listings</title>
+</head>
+<body>
+    <nav class="top-bar topbar-responsive">
+        <div class="top-bar-title">
+          </span>
+          <a class="topbar-responsive-logo" href="./index.html"><strong>Home</strong></a>
+        </div>
+        <div id="topbar-responsive" class="topbar-responsive-links">
+          <div class="top-bar-right">
+            <ul class="menu simple vertical medium-horizontal">
+              <li><a href="./history.html">Show Search History</a></li>
+              <li><a href="./about.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <main>
+
+
+        <div class="hero-form-listings">
+            <h3>What other jobs you want me to discover?</h3>
+            <form>
+              <div class="row columns">
+                <label for="title">Job Title:</label>
+                <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input" ></input>
+              </div>
+
+              <div id="location-selection" class="row">
+                <div id="city-input" class="columns small-12 medium-4">
+                  <label for="city">City:</label>
+                  <input type="text" placeholder="City" name="city" id="city" class="form-input" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="columns small">
+                  <label for="Radius">Radius in Miles:</label>
+                  <input type="number" value="5" min="5" placeholder="5 Miles or more" name="radius" id="radius" class="form-input"></input>
+                </div>
+              </div>
+                <div class="row" id="search-landing">
+                  <div class="columns small-1">
+                    <button id="search-btn-landing">
+                      Show Me My Future!
+                    </button>
+                </div>
+              </div>
+            </form>
+        </div>
+    </section>
+
+        <div id="listing-container">
+            <h1 id="joblist-header"></h1>
+            <br>
+            <ul id="listings"></ul>
+        </div>
+    </main>
+    <footer class="footer-nav row expanded collapse footer">
+        <div class="footer-nav-left">
+          <p class="footer-copyright">©<span id="copyright-year"></span>
+            <!-- <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script> -->
+            UCF Bootcamp(Cristian Acevedo, Nikita Pokamestov, Steadman Dixon).
+          </p>
+        </div>
+        <div class="footer-nav-center">
+          <ul class="footer-nav-menu">
+            <li class="footer-nav-menu-item">
+              <a href="https://github.com/cacevedo2011">Cristian Acevedo GitHub</a>
+              <a href="https://github.com/npokamestov">Nikita Pokamestov GitHub</a>
+              <a href="#">Steadman Dixon GitHub</a>
+            </li>
+          </ul>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+
+
