@@ -1,6 +1,6 @@
-var apiKeyJooble = "c9c7ab80-0666-402d-812c-887be7ca69a5";
-var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af";
-var appIdAdzuna = "16a1e151";
+var apiKeyJooble = "c9c7ab80-0666-402d-812c-887be7ca69a5"
+var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
+var appIdAdzuna = "16a1e151"
 
 var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
 console.log(formInputArr)
@@ -125,7 +125,7 @@ function getJobsJooble (formObj) {
         if(http.readyState == 4 && http.status == 200) {
             var data = http.response;
             var jsonResponse = JSON.parse(data);
-            console.log(jsonResponse);
+            // console.log(jsonResponse);
             var jobs = jsonResponse.jobs;
             // console.log(formObj)
             // console.log(jobs);
@@ -140,14 +140,6 @@ function getJobsJooble (formObj) {
     http.send(params);
 };
 
-// function createModal() {
-//     window.createModal
-// }
-
-// $('#myModal').foundation('reveal', 'open');
-// $('#myModal').foundation('reveal', 'close');
-
-
 function getJobsAdzuna (formObj) {
     var apiUrlAdzuna = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + appIdAdzuna + "&app_key=" + apiKeyAdzuna + "&what=" + formObj.titleForm + "&where=" + formObj.cityForm + "&distance=" + formObj.radiusForm
     fetch(apiUrlAdzuna)
@@ -157,7 +149,6 @@ function getJobsAdzuna (formObj) {
                 console.log(response)
                 // console.log(data)
                 collectJobsAdzuna(formObj, data)
-                $(errorMessageEl).text("")
             });
         }
         else {
@@ -166,41 +157,6 @@ function getJobsAdzuna (formObj) {
         }
     })
 };
-
-
-
-
-
-
-
-
-// var modal = document.querySelector(".modal");
-// var closeButton = document.querySelector(".close-button");
-
-// function toggleModal() {
-//     document.getElementById("modal").style.display = "block";
-//     // modal.classList.toggle("show-modal");
-// }
-
-// function windowOnClick(event) {
-//     if (event.target === modal) {
-//         toggleModal();
-//     }
-// }
-
-// closeButton.addEventListener("click", toggleModal);
-// window.addEventListener("click", windowOnClick)
-
-
-
-
-
-
-
-
-
-
-
 
 function collectJobsJooble(formObj, jobs) {
     localStorage.removeItem("joobleJobsObj")
@@ -323,26 +279,3 @@ $(listingsListEl).on("click", "a", function(event) {
 searchBtnLandingEl.addEventListener("click", searchJobHandler);
 displayCopyrightYear();
 window.addEventListener("load", displayOnLoad)
-
-
-
-// document.getElementById("modal").style.display = "none";
-
-
-
-// var modal = document.querySelector(".modal");
-// var closeButton = document.querySelector(".close-button");
-
-// function toggleModal() {
-//     document.getElementById("modal").style.display = "block";
-//     // modal.classList.toggle("show-modal");
-// }
-
-// function windowOnClick(event) {
-//     if (event.target === modal) {
-//         toggleModal();
-//     }
-// }
-
-// closeButton.addEventListener("click", toggleModal);
-// window.addEventListener("click", windowOnClick)
