@@ -16,47 +16,53 @@
           </span>
           <a class="topbar-responsive-logo" href="./index.html"><strong>Home</strong></a>
         </div>
-        <form>
-            <div class="topbar-responsive-links" id="search-form-nav">
-                <div class="row columns">
-                    <label for="title">Job Title:</label>
-                    <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input" ></input>
-                </div>
-                <div id="location-selection" class="row">
-                    <div id="city-input" class="columns small-12 medium-4">
-                        <label for="city">City:</label>
-                        <input type="text" placeholder="City" name="city" id="city" class="form-input" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="columns small">
-                        <label for="Radius">Radius in Miles:</label>
-                        <input type="number" value="5" min="5" placeholder="5 Miles or more" name="radius" id="radius" class="form-input"></input>
-                    </div>
-                </div>
-                <div class="row" id="search-landing">
-                    <div class="columns small-1">
-                        <button id="search-btn-landing" type="submit">
-                            Show Me My Future!
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
         <div id="topbar-responsive" class="topbar-responsive-links">
           <div class="top-bar-right">
             <ul class="menu simple vertical medium-horizontal">
               <li><a href="./history.html">Show Search History</a></li>
               <li><a href="./about.html">About</a></li>
-              <li><a href="./login.html">Log-In</a></li>
             </ul>
           </div>
         </div>
     </nav>
     <main>
-        <p>sup</p>
+
+
+        <div class="hero-form-listings">
+            <h3>What other jobs you want me to discover?</h3>
+            <form>
+              <div class="row columns">
+                <label for="title">Job Title:</label>
+                <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input" ></input>
+              </div>
+
+              <div id="location-selection" class="row">
+                <div id="city-input" class="columns small-12 medium-4">
+                  <label for="city">City:</label>
+                  <input type="text" placeholder="City" name="city" id="city" class="form-input" />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="columns small">
+                  <label for="Radius">Radius in Miles:</label>
+                  <input type="number" value="5" min="5" placeholder="5 Miles or more" name="radius" id="radius" class="form-input"></input>
+                </div>
+              </div>
+                <div class="row" id="search-landing">
+                  <div class="columns small-1">
+                    <button id="search-btn-landing">
+                      Show Me My Future!
+                    </button>
+                </div>
+              </div>
+            </form>
+        </div>
+    </section>
+
         <div id="listing-container">
             <h1 id="joblist-header"></h1>
+            <br>
             <ul id="listings"></ul>
         </div>
     </main>

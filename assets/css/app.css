@@ -102,7 +102,7 @@ margin: 5px 0 15px 0;
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* This is to make the form have a shadow */
     border-radius: 15px;
-    opacity: 70%;
+    opacity: 85%;
 }
 
 .section-title {
@@ -114,9 +114,13 @@ margin: 5px 0 15px 0;
     text-align: center;
     margin: 0 auto 35px auto;
     width: 50%;
-  }
+}
 .primary-border{
     border-color: var(--secondary-color);
+}
+
+.card{
+    border-radius: 10px;
 }
 
 .card-section{
@@ -131,135 +135,31 @@ margin: 5px 0 15px 0;
 }
 .card-section p{
     color: white;
-}
-.comment{
     font-size: large;
 }
 
+
 .testimonies{
     background-color: var(--primary-color);
+    
+}
+
+.flex-row h2{
+    font-size: 50px;
+
 }
 
 .intro p{
     line-height: 1.7;
     color: #39a6b2;
     width: 80%;
-    font-size: 20px;
+    font-size: 25px;
     /*you can use either display: inline-block to center the 
     text back or you can use:*/
     margin: 0 auto;
     text-align: center;
 }
 
-.trainers{
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;  
-}
-.testimony{
-    margin: 20px;
-    background: var(--secondary-color);
-    color: white;
-    flex: 1;
-}
-.user-img {
-    width: 100%;
-    min-height: 300px;
-    display: flex;
-    padding: 15px;
-    align-items: flex-end;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-}
-.user-1{
-    background-image: url(../images/hero1.jpg);
-}
-.user-2{
-    background-image: url(../images/user2.jpg);
-}
-.user-3{
-    background-image: url(../images/user3.png);
-}
-.user-4{
-    background-image: url(../images/user4.png);
-}
-
-.user-img::after {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(rgba(140,82,255, 0.3), rgba(2, 78, 118, 1));
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: 0.5s;
-  }
-
-.testimony:hover .user-img::after {
-    opacity: 1;
-    background: linear-gradient( rgba(140,82,255, 0.3), #024e76);
-}
-
-.user-img h3 {
-    font-size: 28px;
-    position: relative;
-    z-index: 20;
-    margin-bottom: 5px;
-    top: 200px;
-    transition: 0.6s;
-}
-
-.user-img h4 {
-    font-size: 22px;
-    position: relative;
-    z-index: 20;
-    top: 200px;
-    transition: 0.6s;
-}
-
-
-.testimony:hover .user-img h3,
-.testimony:hover .user-img h4 {
-    top: 0;
-}
-.testimony-bio{
-    padding: 35px;
-    float: left;
-    line-height: 1.3;
-}
-
-.text-left{
-    text-align: left;
-}
-.text-right{
-    text-align: right;
-}
-.flex-row{
-    display: flex;
-    
-}
-.testimony-bio h3{
-    font-size: 28px;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-
-}
-.testimony-bio h4{
-    font-weight: lighter;
-    font-size: 22px;
-    margin-bottom: 15px;
-    opacity: 0;
-    visibility: hidden;
-    display: none;
-}
-.testimony-bio p{
-    font-size: 17px;
-}
 q{
     font-style: italic;
     font-size: larger;
@@ -281,13 +181,7 @@ q{
 #search-landing {
     justify-content: flex-end;
 }
-.capitalize {
-    text-transform: capitalize;
-}
-a:link {
-    text-decoration: none;
-    color: black;
-}
+
 
 a:visited {
     text-decoration: none;
@@ -306,6 +200,9 @@ a:active {
     .hero-form{
         width: fit-content;
     }
+    .top-bar-title{
+        text-align: center;
+    }
 
     .hero-cta {
         width: 100%;
@@ -314,5 +211,13 @@ a:active {
         color: #fff;
         font-size: 18px;
         line-height: 1.2;
+    }
+
+}
+
+@media only screen and (max-width: 640px){
+
+    .flex-row h2{
+        width: fit-content;
     }
 }

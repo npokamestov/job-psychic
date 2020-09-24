@@ -950,7 +950,7 @@ button,input,optgroup,select,textarea {
 }
 
 .grid-margin-x.small-up-2>.cell {
-    width: calc(50% - 1.25rem)
+    width: fit-content;
 }
 
 .grid-margin-x.small-up-3>.cell {
