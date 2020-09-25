@@ -1,18 +1,20 @@
-var apiKeyJooble = "c9c7ab80-0666-402d-812c-887be7ca69a5"
+var apiKeyJooble = "8148bd6e-0a33-4ebf-9010-ef628b78d3a7"
 var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
 var appIdAdzuna = "16a1e151"
 
 var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
 console.log(formInputArr)
 var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [];
-// console.log(searchHistoryArr)
+console.log(searchHistoryArr)
 var joobleJobsArr = JSON.parse(localStorage.getItem("joobleJobsObj")) || [];
 console.log(joobleJobsArr)
 var adzunaJobsArr = JSON.parse(localStorage.getItem("adzunaJobsObj")) || [];
 console.log(adzunaJobsArr)
 
 var copyrightYearEl = document.querySelector(".footer-copyright");
-var copyrightYearText = document.querySelector("#copyright-year")
+
+var copyrightYearText = document.querySelector("#copyright-year");
+var errorMessageEl = document.querySelector("#error-message");
 var jobTitleEl = document.querySelector("#job-title");
 var cityEl = document.querySelector("#city");
 var radiusEl = document.querySelector("#radius");
@@ -23,9 +25,8 @@ var joblistHeaderEl = document.querySelector("#joblist-header");
 var listingsListEl = document.querySelector("#listings");
 
 function displayCopyrightYear() {
-    $(copyrightYearText).text(new Date().getFullYear())
+    $(copyrightYearText).text(new Date().getFullYear());
     // console.log(copyrightYearText)
-    
 };
 
 function displayOnLoad(event) {
@@ -68,7 +69,8 @@ function searchJobHandler (event) {
     event.preventDefault();
     if (!jobTitleEl.value) {
         // console.log(jobTitleEl.value);
-        alert("You must enter a job title!");
+        $(errorMessageEl).addClass("red-text")
+        $(errorMessageEl).text("You must enter at least a job title!")
         return;
     }
     else {
@@ -130,6 +132,10 @@ function getJobsJooble (formObj) {
             // console.log(jobs);
             collectJobsJooble(formObj, jobs);
         }
+        else {
+            $(errorMessageEl).addClass("red-text")
+            $(errorMessageEl).text("Job Title/City Not Found")
+        }
     }
     //Send request to server
     http.send(params);
@@ -147,7 +153,8 @@ function getJobsAdzuna (formObj) {
             });
         }
         else {
-            console.log("Error: Input " + response.statusText)
+            $(errorMessageEl).addClass("red-text")
+            $(errorMessageEl).text("Job Title/City Not Found")
         }
     })
 };
@@ -157,22 +164,22 @@ function collectJobsJooble(formObj, jobs) {
     joobleJobsArr.length = 0;
     for (var i = 0; i < jobs.length; i++) {
         var jobTitle = jobs[i].title
-        // console.log(jobTitle)
+        console.log(jobTitle)
         var jobLocation = jobs[i].location
-        // console.log(jobLocation)
+        console.log(jobLocation)
         var jobUrl = jobs[i].link
-        // console.log(jobUrl)
+        console.log(jobUrl)
         var joobleJobsObj = {
             title: jobTitle,
             location: jobLocation,
             link: jobUrl
         };
-        // // console.log(formObj.titleForm)
+        console.log(formObj.titleForm)
         joobleJobsArr.push(joobleJobsObj);
-        // console.log(formInputArr)
+        console.log(formInputArr)
         localStorage.setItem("joobleJobsObj", JSON.stringify(joobleJobsArr));
         displayJobsJooble(joobleJobsObj)
-        // console.log(joobleJobs)
+        console.log(joobleJobsObj)
     };
     displayJobsHeader(formObj)
 };

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/foundation.css">
     <link rel="stylesheet" href="./assets/css/foundation.min.css">
     <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Job Psychic: We show your future Job</title>
     <link rel="icon" href="./assets/images/titleLogo.png" type = "image/x-icon">
 </head>
@@ -47,6 +48,7 @@
             <h3>Which Job Does Your Future Hold?</h3>
             <p> Begin searching with as little as a job title</p>
             <form>
+              <div id="error-message"></div>
               <div class="row columns">
                 <label for="title">Job Title:</label>
                 <input type="text" placeholder="Job Title or Description" name="title" id="job-title" class="form-input" ></input>
@@ -153,10 +155,7 @@
         
             <footer class="footer-nav row expanded collapse footer">
           <div class="footer-nav-left">
-            <p class="footer-copyright">© 
-              <script type="text/javascript">
-                document.write(new Date().getFullYear());
-              </script>
+            <p class="footer-copyright">©<span id="copyright-year"></span>
               UCF Bootcamp(Cristian Acevedo, Nikita Pokamestov, Steadman Dixon).
             </p>
           </div>
