@@ -1,4 +1,4 @@
-var apiKeyJooble = "c9c7ab80-0666-402d-812c-887be7ca69a5"
+var apiKeyJooble = "8148bd6e-0a33-4ebf-9010-ef628b78d3a7"
 var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
 var appIdAdzuna = "16a1e151"
 
@@ -69,7 +69,8 @@ function searchJobHandler (event) {
     event.preventDefault();
     if (!jobTitleEl.value) {
         // console.log(jobTitleEl.value);
-        alert("You must enter a job title!");
+        $(errorMessageEl).addClass("red-text")
+        $(errorMessageEl).text("You must enter at least a job title!")
         return;
     }
     else {
@@ -163,9 +164,9 @@ function collectJobsJooble(formObj, jobs) {
     joobleJobsArr.length = 0;
     for (var i = 0; i < jobs.length; i++) {
         var jobTitle = jobs[i].title
-        // console.log(jobTitle)
+        console.log(jobTitle)
         var jobLocation = jobs[i].location
-        // console.log(jobLocation)
+        console.log(jobLocation)
         var jobUrl = jobs[i].link
         // console.log(jobUrl)
         var joobleJobsObj = {
@@ -175,7 +176,7 @@ function collectJobsJooble(formObj, jobs) {
         };
         // // console.log(formObj.titleForm)
         joobleJobsArr.push(joobleJobsObj);
-        // console.log(formInputArr)
+        console.log(formInputArr)
         localStorage.setItem("joobleJobsObj", JSON.stringify(joobleJobsArr));
         displayJobsJooble(joobleJobsObj)
         // console.log(joobleJobs)
