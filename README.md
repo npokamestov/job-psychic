@@ -34,10 +34,14 @@ https://npokamestov.github.io/job-psychic/
 ## Screenshot
 ![Screenshot of deployed application](./assets/images/screenshot.png)
 
-### This project is made by:
+### Contributors:
 
 * Cristian Acevedo
 
 * Nikita Pokamestov
 
 * Steadman Dixon
+
+## Limitations
+
+This application uses the free Jooble API which limits to 500 requests, therefore if no response, notify one of the contributors.

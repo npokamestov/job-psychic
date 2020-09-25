@@ -7,9 +7,9 @@ var formInputArr = JSON.parse(localStorage.getItem("formInputObj")) || [];
 var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [];
 // console.log(searchHistoryArr)
 var joobleJobsArr = JSON.parse(localStorage.getItem("joobleJobsObj")) || [];
-console.log(joobleJobsArr)
+// console.log(joobleJobsArr)
 var adzunaJobsArr = JSON.parse(localStorage.getItem("adzunaJobsObj")) || [];
-console.log(adzunaJobsArr)
+// console.log(adzunaJobsArr)
 
 var copyrightYearEl = document.querySelector(".footer-copyright");
 var copyrightYearText = document.querySelector("#copyright-year");
@@ -28,7 +28,7 @@ function displayCopyrightYear() {
     $(copyrightYearText).text(new Date().getFullYear());
     // console.log(copyrightYearText)
 };
-
+// loads listings on page load
 function displayOnLoad(event) {
     event.preventDefault();
     $(listingsListEl).empty();
@@ -65,6 +65,7 @@ function displayOnLoad(event) {
     };
 };
 
+// uses input to begin search
 function searchJobHandler (event) {
     event.preventDefault();
     if (!jobTitleEl.value) {
@@ -107,7 +108,7 @@ function searchJobHandler (event) {
         getJobsJooble(formObj);
         getJobsAdzuna(formObj);
 };
-
+// jooble api fetch using form inputs
 function getJobsJooble (formObj) {
     var url = "https://jooble.org/api/";
     var key = apiKeyJooble;
@@ -140,7 +141,7 @@ function getJobsJooble (formObj) {
     //Send request to server
     http.send(params);
 };
-
+// adzuna api fetch using form input
 function getJobsAdzuna (formObj) {
     var apiUrlAdzuna = "https://api.adzuna.com/v1/api/jobs/us/search/1?app_id=" + appIdAdzuna + "&app_key=" + apiKeyAdzuna + "&what=" + formObj.titleForm + "&where=" + formObj.cityForm + "&distance=" + formObj.radiusForm
     fetch(apiUrlAdzuna)
@@ -158,15 +159,15 @@ function getJobsAdzuna (formObj) {
         }
     })
 };
-
+// takes data from jooble api and sends to array
 function collectJobsJooble(formObj, jobs) {
     localStorage.removeItem("joobleJobsObj")
     joobleJobsArr.length = 0;
     for (var i = 0; i < jobs.length; i++) {
         var jobTitle = jobs[i].title
-        console.log(jobTitle)
+        // console.log(jobTitle)
         var jobLocation = jobs[i].location
-        console.log(jobLocation)
+        // console.log(jobLocation)
         var jobUrl = jobs[i].link
         // console.log(jobUrl)
         var joobleJobsObj = {
@@ -176,7 +177,7 @@ function collectJobsJooble(formObj, jobs) {
         };
         // // console.log(formObj.titleForm)
         joobleJobsArr.push(joobleJobsObj);
-        console.log(formInputArr)
+        // console.log(formInputArr)
         localStorage.setItem("joobleJobsObj", JSON.stringify(joobleJobsArr));
         displayJobsJooble(joobleJobsObj)
         // console.log(joobleJobs)
@@ -184,6 +185,7 @@ function collectJobsJooble(formObj, jobs) {
     displayJobsHeader(formObj)
 };
 
+// takes data from adzuna api and sends to array
 function collectJobsAdzuna(formObj, data) {
     localStorage.removeItem("adzunaJobsObj")
     adzunaJobsArr.length = 0;
@@ -221,6 +223,7 @@ function collectJobsAdzuna(formObj, data) {
     }
 };
 
+// takes job title from form input and displays as header
 function displayJobsHeader(formObj) {
     // $(listingContainerEl).empty();
     var jobsListHeader = $("#joblist-header");
@@ -229,7 +232,7 @@ function displayJobsHeader(formObj) {
         // console.log(jobsListHeader);
         $(listingContainerEl).prepend(jobsListHeader);
 };
-
+// displays job data form jooble api
 function displayJobsJooble(joobleJobsObj) {
     var joobleListingItem = $("<li>");
         joobleListingItem.addClass("listing-item")
@@ -247,7 +250,7 @@ function displayJobsJooble(joobleJobsObj) {
     // var historyLinks = document.querySelector(".listing-item");
     //     console.log(historyLinks)
 };
-
+// displays job data from adzuna api
 function displayJobsAdzuna(adzunaJobsObj) {
     var adzunaListingItem = $("<li>");
         adzunaListingItem.addClass("listing-item")
@@ -262,7 +265,7 @@ function displayJobsAdzuna(adzunaJobsObj) {
         $(listingsListEl).append(adzunaListingItem);
         $(adzunaListingItem).append(adzunaListingLink);
 }
-
+// writes to history array when job link is clicked
 $(listingsListEl).on("click", "a", function(event) {
     var title = $(this).text();
     // console.log(title);
@@ -276,7 +279,8 @@ $(listingsListEl).on("click", "a", function(event) {
     searchHistoryArr.push(listingsObj);
     localStorage.setItem("searchHistoryObj", JSON.stringify(searchHistoryArr));
 });
-
+// starts search on search button click
 searchBtnLandingEl.addEventListener("click", searchJobHandler);
 displayCopyrightYear();
+// diaplays listings on listings page load
 window.addEventListener("load", displayOnLoad)
