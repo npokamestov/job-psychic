@@ -12,8 +12,8 @@ var adzunaJobsArr = JSON.parse(localStorage.getItem("adzunaJobsObj")) || [];
 console.log(adzunaJobsArr)
 
 var copyrightYearEl = document.querySelector(".footer-copyright");
-var copyrightYearText = document.querySelector("#copyright-year");
 
+var copyrightYearText = document.querySelector("#copyright-year");
 var errorMessageEl = document.querySelector("#error-message");
 var jobTitleEl = document.querySelector("#job-title");
 var cityEl = document.querySelector("#city");
