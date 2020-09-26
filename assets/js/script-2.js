@@ -1,4 +1,4 @@
-var apiKeyJooble = "8148bd6e-0a33-4ebf-9010-ef628b78d3a7"
+var apiKeyJooble = "c4a52c2f-a8fc-4b63-b866-787b61fff84d"
 var apiKeyAdzuna = "a340c7044ad462ad2595c48c2fc727af"
 var appIdAdzuna = "16a1e151"
 
