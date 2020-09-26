@@ -2,11 +2,12 @@ var searchHistoryArr = JSON.parse(localStorage.getItem("searchHistoryObj")) || [
 var historyListEl = document.querySelector("#history");
 var clearBtn = document.querySelector("#clear-history");
 
+// clears search history
 function clearHistory(searchHistoryArr) {
     localStorage.removeItem("searchHistoryObj");
     displayHistory(searchHistoryArr)
 };
-
+// displays search history from history array
 function displayHistory(searchHistoryArr) {
     $(historyListEl).empty();
     for (var i=0;i<searchHistoryArr.length;i++) {
