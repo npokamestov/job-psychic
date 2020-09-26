@@ -130,10 +130,11 @@ function getJobsJooble (formObj) {
             // console.log(jsonResponse);
             var jobs = jsonResponse.jobs;
             // console.log(formObj)
-            // console.log(jobs);
+            console.log(jobs);
             collectJobsJooble(formObj, jobs);
         }
         else {
+            localStorage.removeItem("joobleJobsObj");
             $(errorMessageEl).addClass("red-text")
             $(errorMessageEl).text("Job Title/City Not Found")
         }
@@ -148,12 +149,13 @@ function getJobsAdzuna (formObj) {
     .then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
-                console.log(response)
+                // console.log(response)
                 // console.log(data)
                 collectJobsAdzuna(formObj, data)
             });
         }
         else {
+            localStorage.removeItem("adzunaJobsObj");
             $(errorMessageEl).addClass("red-text")
             $(errorMessageEl).text("Job Title/City Not Found")
         }
